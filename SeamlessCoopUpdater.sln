@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeamlessCoopUpdater", "SeamlessCoopUpdater\SeamlessCoopUpdater.csproj", "{3ADBB944-DA8E-4C33-B048-F6956F8E5DE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeamlessCoopUpdater.Models", "SeamlessCoopUpdater.Models\SeamlessCoopUpdater.Models.csproj", "{264FB883-6AD4-402C-9AC5-55873F86F10B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeamlessCoopUpdater.Logic", "SeamlessCoopUpdater.Logic\SeamlessCoopUpdater.Logic.csproj", "{511F5F22-0F9D-4AEA-9C5C-AFA38928DE3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{3ADBB944-DA8E-4C33-B048-F6956F8E5DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ADBB944-DA8E-4C33-B048-F6956F8E5DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ADBB944-DA8E-4C33-B048-F6956F8E5DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{264FB883-6AD4-402C-9AC5-55873F86F10B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264FB883-6AD4-402C-9AC5-55873F86F10B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264FB883-6AD4-402C-9AC5-55873F86F10B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264FB883-6AD4-402C-9AC5-55873F86F10B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{511F5F22-0F9D-4AEA-9C5C-AFA38928DE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{511F5F22-0F9D-4AEA-9C5C-AFA38928DE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{511F5F22-0F9D-4AEA-9C5C-AFA38928DE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{511F5F22-0F9D-4AEA-9C5C-AFA38928DE3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

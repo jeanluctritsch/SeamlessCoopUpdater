@@ -1,4 +1,4 @@
-﻿namespace SeamlessCoopUpdater;
+﻿namespace SeamlessCoopUpdater.Models;
 
 public class LatestRelease
 {
