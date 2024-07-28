@@ -146,7 +146,7 @@ public class Updater
     public void CreateModBackup()
     {
         if (!Directory.Exists(_modFolder))
-            throw new Exception("Dossier du mod introuvable.");
+            return;
 
         string now = DateTime.Now.ToString("yyyyMMdd_HHmmss");
         _currentBackupFolderPath = Path.Combine(_gameInstallationFolder, $"{ModFolderName}_{now}");
@@ -235,17 +235,31 @@ public class Updater
 
     private string GetSteamInstallationFolderPath()
     {
-        Registry.LocalMachine.OpenSubKey("SOFTWARE\\WOW6432Node\\Valve\\Steam");
-        string? path64 = Registry.LocalMachine.GetValue("InstallPath") as string;
+        if (Environment.Is64BitOperatingSystem)
+        {
+            return GetSteamInstallationFolderPath64();
+        }
 
-        if (!string.IsNullOrEmpty(path64))
-            return path64;
+        return GetSteamInstallationFolderPath32();
+    }
 
+    private string GetSteamInstallationFolderPath32()
+    {
         string? path32 =
-            Registry.LocalMachine.OpenSubKey("SOFTWARE\\Valve\\Steam").GetValue("InstallPath", string.Empty) as string;
+            Registry.LocalMachine.OpenSubKey("SOFTWARE\\Valve\\Steam")?.GetValue("InstallPath", string.Empty) as string;
 
         if (!string.IsNullOrEmpty(path32))
             return path32;
+
+        throw new Exception("Steam n'est pas installé.");
+    }
+
+    private string GetSteamInstallationFolderPath64()
+    {
+        string? path64 = Registry.LocalMachine.OpenSubKey("SOFTWARE\\WOW6432Node\\Valve\\Steam")?.GetValue("InstallPath") as string;
+
+        if (!string.IsNullOrEmpty(path64))
+            return path64;
 
         throw new Exception("Steam n'est pas installé.");
     }
