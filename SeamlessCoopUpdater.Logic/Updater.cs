@@ -1,6 +1,12 @@
-﻿using System.IO.Compression;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
+using System.Linq;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using System.Threading.Tasks;
 using Microsoft.Win32;
 using SeamlessCoopUpdater.Models;
 
@@ -219,7 +225,7 @@ public class Updater
                 Console.WriteLine($"{i + 1}. {candidates[i]}");
             }
 
-            if (!int.TryParse(Console.ReadLine(), out int choice) || choice < 1 || choice > candidates.Count)
+            if (!int.TryParse(Console.ReadKey().KeyChar.ToString(), out int choice) || choice < 1 || choice > candidates.Count)
             {
                 Console.WriteLine("Choix invalide.");
                 Environment.Exit(-1);

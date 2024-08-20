@@ -1,4 +1,6 @@
-﻿using SeamlessCoopUpdater.Logic;
+﻿using System;
+using System.Threading.Tasks;
+using SeamlessCoopUpdater.Logic;
 using SeamlessCoopUpdater.Models;
 
 namespace SeamlessCoopUpdater;
@@ -32,8 +34,8 @@ class Program
             {
                 Console.WriteLine("Le mod est déjà à jour.");
                 Console.WriteLine("Voulez-vous forcer la mise à jour ? ([o]/n)");
-                var forceUpdate = Console.ReadLine();
-                if (!String.IsNullOrEmpty(forceUpdate) && forceUpdate.ToUpper() != "O" && forceUpdate.ToUpper() != "Y")
+                var forceUpdate = Console.ReadKey();
+                if (forceUpdate.Key != ConsoleKey.Enter && forceUpdate.KeyChar != 'O' && forceUpdate.KeyChar != 'o' && forceUpdate.KeyChar != 'Y' && forceUpdate.KeyChar != 'y')
                 {
                     Environment.Exit(0);
                 }
