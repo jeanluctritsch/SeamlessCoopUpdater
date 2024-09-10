@@ -97,7 +97,7 @@ public class Updater
     public void ReplaceIniFileValues()
     {
         if (string.IsNullOrEmpty(_currentBackupFolderPath))
-            throw new Exception("Backup du mod introuvable.");
+            return;
         
         string iniFilePath = Path.Combine(_modFolder, IniFileName);
         string backupIniFilePath = Path.Combine(_currentBackupFolderPath, IniFileName);
